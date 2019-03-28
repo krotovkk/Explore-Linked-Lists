@@ -1,5 +1,5 @@
 from random import randint
-
+    
 class node:
     def __init__(self,data):
         self.data = data
@@ -13,7 +13,6 @@ class linked_list:
         print('\n')
 
     def insert(self,head,data):
-    #Complete this method
         if head is None:
             head = node(data)
         elif head.next is None:
@@ -35,12 +34,12 @@ class linked_list:
 
 
 
+if __name__ == '__main__':
+    mylist= linked_list()
+    T=15
+    head=None
+    for i in range(T):
+        data=randint(1,100)
+        head=mylist.insert(head,data)    
 
-mylist= linked_list()
-T=int(input())
-head=None
-for i in range(T):
-    data=int(input())
-    head=mylist.insert(head,data)    
-
-mylist.display(head); 
+    mylist.display(head); 
