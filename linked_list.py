@@ -1,26 +1,29 @@
 from random import randint
-    
-class node:
-    def __init__(self,data):
+
+
+class Node:
+    def __init__(self, data):
         self.data = data
         self.next = None
-class linked_list:
-    def display(self,head):
+
+
+class LinkedList:
+    def display(self, head):
         current = head
         while current:
-            print(current.data,end=' ')
+            print(current.data, end=' ')
             current = current.next
         print('\n')
 
-    def insert(self,head,data):
+    def insert(self, head, data):
         if head is None:
-            head = node(data)
+            head = Node(data)
         elif head.next is None:
-            head.next = node(data)
+            head.next = Node(data)
         else:
             self.insert(head.next, data)
         return head
-    
+
     def remove(self, head, data):
         if head is None:
             return
@@ -33,13 +36,12 @@ class linked_list:
         return head
 
 
-
 if __name__ == '__main__':
-    mylist= linked_list()
-    T=15
-    head=None
+    mylist = LinkedList()
+    T = 15
+    head = None
     for i in range(T):
-        data=randint(1,100)
-        head=mylist.insert(head,data)    
+        data = randint(1, 100)
+        head = mylist.insert(head, data)
 
-    mylist.display(head); 
+    mylist.display(head)
